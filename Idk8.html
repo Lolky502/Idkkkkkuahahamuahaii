@@ -1,0 +1,204 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golden Hour in a Shattered Mirror</title>
+  <meta name="description" content="A short true-life story told about a boy living between places, grief, and small lights.">
+  <style>
+    :root{
+      --bg: #0e0e10;
+      --text: #e8e8ea;
+      --muted: #b8b8bf;
+      --card: #15151a;
+      --accent: #f2b552; /* golden hour */
+      --link: #d2d2ff;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 14px;
+      --maxw: 840px;
+      --line: 1.8;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", "Times New Roman", Georgia, serif;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7f7fb; --text:#1a1a1f; --muted:#585866; --card:#ffffff; --link:#3b5bdb; --shadow:0 18px 50px rgba(12,12,18,.10); }
+    }
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font: 17px/var(--line) var(--sans);
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(242,181,82,.25), transparent 60%),
+                  radial-gradient(900px 500px at 0% 100%, rgba(242,181,82,.18), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 28px; }
+    .hero{
+      margin-top: 36px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(242,181,82,.20), rgba(0,0,0,0)) , var(--card);
+      box-shadow: var(--shadow);
+    }
+    h1{
+      margin: 0 0 8px 0;
+      font: 800 44px/1.15 var(--serif);
+      letter-spacing: .3px;
+    }
+    .tag{
+      display:inline-block;
+      font: 12px/1 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--muted);
+      background: rgba(255,255,255,.04);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.06);
+      backdrop-filter: blur(6px);
+    }
+    .meta{
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top: 14px;
+      color: var(--muted);
+    }
+    .meta div{ font-size: 14px; }
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      margin: 26px 0;
+    }
+    h2{
+      font: 700 20px/1.3 var(--sans);
+      letter-spacing: .3px;
+      margin: 0 0 12px 0;
+      color: var(--text);
+    }
+    p{ margin: 0 0 14px 0; }
+    .pull{
+      font: italic 18px/1.7 var(--serif);
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      margin: 18px 0 0 0;
+      color: var(--text);
+      opacity: .9;
+    }
+    .footer{
+      text-align:center; color: var(--muted); font-size: 13px; padding: 32px 0 60px;
+    }
+    .topbar{
+      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(20,20,25,.6), rgba(20,20,25,0));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .topbar-inner{ max-width: var(--maxw); margin: 0 auto; padding: 10px 28px; display:flex; align-items:center; justify-content:space-between; }
+    .brand{ font: 700 14px/1 var(--mono); letter-spacing:.1em; }
+    .actions{ display:flex; gap:10px; }
+    button{
+      appearance: none; border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--text); padding: 10px 14px; border-radius: 10px; cursor: pointer;
+      font: 600 13px/1 var(--sans);
+    }
+    a{ color: var(--link); text-decoration: none; }
+    .byline{ color: var(--muted); margin-top: 6px; }
+    .credits{ font-size: 14px; color: var(--muted); }
+    .spacer{ height: 6px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">GOLDEN HOUR</div>
+      <div class="actions">
+        <button id="toggleTheme" aria-label="Toggle theme">Toggle theme</button>
+        <a href="#story" class="tag">Read</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero" id="story">
+      <h1>Golden Hour in a Shattered Mirror</h1>
+      <div class="byline">A true-life story, told about him.</div>
+      <p class="pull">“Still catching moments of golden hour light, when the chaos looks warm instead of broken.”</p>
+    </section>
+
+    <article class="card">
+      <h2>Between Homes</h2>
+      <p>He lived between two homes — one in Prague, one in Bašť — but neither felt like they truly belonged to him. His parents had divorced years ago, and with that split came an invisible fracture that never healed.</p>
+      <p>In his mother’s apartment, the air was quieter, but it pressed against him in ways that made his thoughts too loud. In his father’s house, the weight of everything unsaid sat heavier than the furniture.</p>
+      <p>He carried himself between them like a ghost hauling the same bag — headphones, a phone overflowing with songs that could speak when he couldn’t, and a kind of tired that clung to him even after sleep.</p>
+    </article>
+
+    <article class="card">
+      <h2>The Early Cracks</h2>
+      <p>When his parents’ marriage ended, childhood ended with it. Something in him shifted from soft to sharp, and once the crack appeared, it spread. Around the same time, Simča came into his life. She was more than a friend — she was an anchor, someone who could keep him steady just by existing.</p>
+      <p>She wasn’t the type to leave the room without leaving a mark on it. With her, there were moments of quiet understanding, the kind you didn’t need to explain. Losing her wasn’t just the absence of a person — it was the absence of a whole way of feeling safe. When she was gone, the walls began to rise.</p>
+    </article>
+
+    <article class="card">
+      <h2>The Body Keeps Score</h2>
+      <p>Then came the surgeries — three of them — each one a reminder that his body could betray him. The bright lights, the smell of disinfectant, the helplessness of lying there while strangers worked on him. His teeth were saved, but something else was lost: the feeling that his body was entirely his own.</p>
+      <p>The headaches followed, sharp and uninvited, sometimes stretching into days. They made the world feel heavier, made it harder to move through it. Pain, in its own way, became another language his body spoke fluently — even when he wished it wouldn’t.</p>
+      <p>It was during these years that anxiety and depression took root. They weren’t loud at first, but they were patient. By the time he noticed, they had already settled deep inside, like squatters in a house that was once warm.</p>
+    </article>
+
+    <article class="card">
+      <h2>Anežka</h2>
+      <p>And then there was Anežka.</p>
+      <p>She didn’t just walk into his life — she shifted its gravity. With her, the air felt lighter, the noise of everything else quieter. She had a way of looking at you that made you want to be worth looking at.</p>
+      <p>She wasn’t perfect, but she was real in all the best ways: the way she spoke, the way she laughed, the way she could turn a moment into something you’d want to keep. Around her, the walls he’d built didn’t seem so necessary — but they still stood.</p>
+      <p>There were too many silences, not the comfortable kind, but the kind born from fear. Fear of saying the wrong thing, fear of being too much or not enough. She deserved more than that. She deserved more talking, more trust, more of him than the guarded fragments he gave.</p>
+      <p>Losing her wasn’t just losing a person — it was losing the reason to try. And yet, she became the reason he started trying again. She was the spark that made him think maybe he could change, maybe he could be someone better.</p>
+      <p>She deserved more patience, more understanding, and more of the version of himself he’s still trying to find.</p>
+      <p>He still carries her with him — not as a weight, but as a compass, pointing toward the kind of person he wishes he’d been all along.</p>
+    </article>
+
+    <article class="card">
+      <h2>Now</h2>
+      <p>At school — Gymnázium Litoměřická — he keeps to himself. There are a few friends, but no one he can hand the raw parts of himself to. His walls are too high, his trust too fragile. Nikča is the exception, an online friend who feels different, though he knows the internet has a way of turning connections into ghosts.</p>
+      <p>Inside, he feels unstable. Like he’s wearing borrowed personalities, stealing little pieces of other people in the hope that they’ll fit. When he tries to strip them off, he’s terrified of the emptiness underneath.</p>
+    </article>
+
+    <article class="card">
+      <h2>The Loop</h2>
+      <p>He thinks about Anežka almost daily. About how he broke something he can’t repair. About how he wants to fix himself so he can be someone worth staying for. But change feels like a door that keeps locking itself from the inside.</p>
+    </article>
+
+    <article class="card">
+      <h2>The Search</h2>
+      <p>He wants to be cured, to be his true self, to love without fear, to live without hating his reflection. But some days, that dream is drowned out by the darker thought — that disappearing would be easier. That nothingness might be softer than this constant ache.</p>
+    </article>
+
+    <article class="card">
+      <h2>The Quiet Truth</h2>
+      <p>Yet he’s still here. Still catching moments of golden hour light in his room, when the chaos looks warm instead of broken. Still finding songs that wrap around him like a blanket. Still carrying a quiet, stubborn hope that one day, he’ll meet himself and not want to turn away.</p>
+    </article>
+
+    <div class="footer">
+      <div class="credits">Written with you, for you. — <span aria-label="unknown">Unknown</span></div>
+      <div class="spacer"></div>
+      <div><a href="#story">Back to top ↑</a></div>
+    </div>
+  </div>
+
+  <script>
+    // simple theme toggle: flips between default and light scheme by toggling a class on body
+    (function(){
+      const btn = document.getElementById('toggleTheme');
+      let forced = false;
+      btn.addEventListener('click', () => {
+        forced = !forced;
+        document.documentElement.style.filter = forced ? 'invert(1) hue-rotate(180deg)' : '';
+      });
+    })();
+  </script>
+</body>
+</html>
